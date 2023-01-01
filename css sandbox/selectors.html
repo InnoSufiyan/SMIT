@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic</title>
+    <!-- external css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- internal css -->
+    <style>
+      /* body selector */
+      body {
+        background-color: #333;
+      }
+
+      /* tag selector , directly name */
+
+      h2 {
+        color: purple;
+      }
+
+      /* # is for id */
+
+      #welcome {
+        background-color: #f4f4f4;
+      }
+
+      /* . is for class */
+
+      .primary-heading {
+        color: blue;
+      }
+
+      /* multiple selectors */
+      #welcome,
+      #about {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 5px;
+      }
+
+      /* nested selectors */
+      #welcome p {
+        font-size: 20px;
+      }
+
+      #about {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="welcome">
+      <h2 class="primary-heading">Welcome</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+        dignissimos nihil voluptatem est placeat cupiditate doloremque porro
+        fugit unde quisquam?
+      </p>
+    </div>
+    <div id="about">
+      <h2 class="primary-heading">About</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+        dignissimos nihil voluptatem est placeat cupiditate doloremque porro
+        fugit unde quisquam?
+      </p>
+    </div>
+  </body>
+</html>
