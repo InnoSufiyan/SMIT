@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Float and Align</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        /* width: 960px; */
+        /* max width helps in responsiveness */
+        max-width: 960px;
+        margin: 30px auto;
+      }
+
+      .box {
+        background: #f4f4f4;
+        border: 1px solid #333;
+        padding: 20px;
+        margin-bottom: 15px;
+      }
+
+      .box p {
+        /* Text Alignment is left by default */
+        /* text-align: left; */
+        text-align: right;
+        text-align: center;
+
+        /* align justify make edges evenly same */
+        text-align: justify;
+      }
+
+      /* float is not recommended, but its used to float item here n there, and there is one more disadvantage that it has to be cleared every time, with another div have css of clear: both */
+      #box-2 {
+        width: 70%;
+        float: left;
+      }
+      #box-3 {
+        width: 30%;
+        float: right;
+      }
+      .clr {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="box-1" class="box">
+        <h3>box 1</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsam
+          sint mollitia ratione odit reiciendis aut vitae eius assumenda
+          tempore.
+        </p>
+      </div>
+      <div id="box-2" class="box">
+        <h3>box 2</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsam
+          sint mollitia ratione odit reiciendis aut vitae eius assumenda
+          tempore.
+        </p>
+      </div>
+      <div id="box-3" class="box">
+        <h3>box 3</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsam
+          sint mollitia ratione odit reiciendis aut vitae eius assumenda
+          tempore.
+        </p>
+      </div>
+      <div class="clr"></div>
+      <div id="box-4" class="box">
+        <h3>box 4</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsam
+          sint mollitia ratione odit reiciendis aut vitae eius assumenda
+          tempore.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
