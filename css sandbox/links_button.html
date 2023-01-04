@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links and Buttons</title>
+    <style>
+        a {
+            color: #333;
+            /* text decoration helps to remove underline from anchor tag  */
+            text-decoration: none;
+        }
+
+        /* when mouse is over on a element */
+
+        a:hover {
+            color: blue;
+            font-size: 20px;
+            text-decoration: underline;
+        }
+
+        /* if the website is visited */
+
+        /* a:visited {
+            color: red;
+        } */
+
+        /* if the website is active , as mouse is clicked on it */
+
+        a:active {
+            color: yellow;
+        }
+
+        .btn {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #4c6ca0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* every a of btn class */
+
+        .btn a {
+            font-size: 16px;
+            color: #fff !important;
+        }
+
+        /* when mouse is over on btn class element */
+
+        .btn:hover {
+            color: #f4f4f4;
+            background-color: #446190;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <a href="#">Click Here</a>
+    <br>
+    <br>
+    <br>
+    <a href="" class="btn">My Link</a>
+    <button class="btn">
+        My Button
+    </button>
+</body>
+</html>
