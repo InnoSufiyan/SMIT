@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Box_Model</title>
-    <style>
-      /* CSS Reset */
-      * {
-        margin: 0;
-        padding: 0;
-      }
 
-      .box {
-        background: #f4f4f4;
-        border: 2px solid #777;
-        width: 500px;
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box_Model</title>
+  <style>
+    /* CSS Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* padding on all sides */
-        padding: 20px;
+    .box {
+      background: #f4f4f4;
+      border: 2px solid #777;
+      max-width: 500px;
+      min-width: 300px;
 
-        /* padding per side */
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-right: 20px;
-        padding-left: 20px;
+      /* padding on all sides */
+      padding: 20px;
 
-        /* padding shorthand = top, right, bottom, left*/
-        padding: 10px 20px 10px 20px;
+      /* padding per side */
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 20px;
+      padding-left: 20px;
 
-        /* padding shorthand = top/bottom, right/left*/
-        padding: 10px 20px;
+      /* padding shorthand = top, right, bottom, left*/
+      padding: 10px 20px 10px 20px;
 
-        /* margin on all sides */
-        margin: 20px;
+      /* padding shorthand = top/bottom, right/left*/
+      padding: 10px 20px;
 
-        /* margin per side */
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-right: 20px;
-        margin-left: 20px;
+      /* margin on all sides */
+      margin: 20px;
 
-        /* margin shorthand = top, right, bottom, left*/
-        margin: 10px 20px 10px 20px;
+      /* margin per side */
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-right: 20px;
+      margin-left: 20px;
 
-        /* margin shorthand = top/bottom, right/left*/
-        margin: 10px 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box">
-      <h3>Box One</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro libero
-        nam, blanditiis reprehenderit omnis, molestias eaque sequi, aspernatur
-        minus iusto vitae unde assumenda odit voluptas fuga? Atque in ut minima.
-      </p>
-    </div>
-    <div class="box">
-      <h3>Box Two</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro libero
-        nam, blanditiis reprehenderit omnis, molestias eaque sequi, aspernatur
-        minus iusto vitae unde assumenda odit voluptas fuga? Atque in ut minima.
-      </p>
-    </div>
-  </body>
+      /* margin shorthand = top, right, bottom, left*/
+      margin: 10px 20px 10px 20px;
+
+      /* margin shorthand = top/bottom, right/left*/
+      margin: 10px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h3>Box One</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro libero
+      nam, blanditiis reprehenderit omnis, molestias eaque sequi, aspernatur
+      minus iusto vitae unde assumenda odit voluptas fuga? Atque in ut minima.
+    </p>
+  </div>
+  <div class="box">
+    <h3>Box Two</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro libero
+      nam, blanditiis reprehenderit omnis, molestias eaque sequi, aspernatur
+      minus iusto vitae unde assumenda odit voluptas fuga? Atque in ut minima.
+    </p>
+  </div>
+</body>
+
 </html>

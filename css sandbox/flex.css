@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}
+
+#awaeen {
+    width: 80%;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    display: flex;
+    gap: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../images/iphone1.jpg');
+    background-size: cover;
+    height: 500px;
+    gap: 20px;
+}
+
+.section1 p {
+    font-size: 20px;
+}
+
+.section1 .iPhone14 {
+    margin-top: 60px;
+}
+
+.myButtons {
+    display: flex;
+    gap: 20px;
+    font-size: 15px;
+}
