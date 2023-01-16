@@ -1,0 +1,69 @@
+div {
+	height: 90px;
+	width: 290px;
+	font-size: 28px;
+	margin: 20px;
+	color: white;
+	border: none;
+	background-color: blue;
+	line-height: 90px;
+	text-align: center;
+	transition: all 1s;
+}
+
+.background:hover {
+	background-color: green
+}
+
+.color:hover {
+	color: red;
+}
+
+.font-size:hover {
+	font-size: 32px;
+}
+
+.height:hover {
+	height: 120px;
+}
+
+.width:hover {
+	width: 340px;
+}
+
+.letter-spacing:hover {
+	letter-spacing: 5px;
+}
+
+.line-height:hover {
+	line-height: 120px;
+}
+
+.margin-bottom:hover {
+	margin-bottom: 50px;
+}
+
+.margin-top:hover {
+	margin-top: 50px;
+}
+
+.opacity:hover {
+	opacity: .3;
+}
+
+.padding:hover {
+	padding: 20px;
+}
+
+.border-color,
+.border-width {
+	border: 6px solid green;
+}
+
+.border-color:hover {
+	border-color: red;
+}
+
+.border-width:hover {
+	border-width: 12px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dog {
+            margin-left: 70px;
+        }
+
+        .bat {
+            position: absolute;
+            left: 213px;
+            bottom: 19px;
+        }
+
+        .bat img {
+            transform: rotate(33deg);
+            transform-origin: bottom;
+            transition: 1s ease-in;
+        }
+
+        .bat img:hover {
+            transform: rotate(-62deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div style="width: 50%; margin: 0 auto; display: flex; align-items: center; position: relative;">
+
+            <div class="dog2">
+                <img width="200px" src="./assets/dog2.png" alt="">
+            </div>
+            <div class="dog">
+                <img width="200px" src="./assets/dog.png" alt="">
+            </div>
+            <div class="bat">
+                <img width="200px" src="./assets/bat.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

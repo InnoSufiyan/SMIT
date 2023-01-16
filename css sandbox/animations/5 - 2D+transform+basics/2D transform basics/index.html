@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Transition</title>
+	<style type="text/css">
+		div {
+			height: 150px;
+			width: 150px;
+			background-color: #40739e;
+			color: white;
+			line-height: 150px;
+			text-align: center;
+			font-size: 24px;
+			margin: 20px;
+			margin-right: auto;
+			margin-left: auto;
+			transition: transform 1s;
+		}
+
+		.scale:hover {
+			transform: scale(1.2);
+		}
+
+		.translate:hover {
+			transform: translateX(320px);
+		}
+
+		.rotate:hover {
+			/* transform: rotate(180deg); */
+			transform: rotate(-360deg);
+		}
+
+		.skew:hover {
+			transform: skew(20deg);
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="scale">scale me</div>
+	<div class="translate">translate me</div>
+	<div class="rotate">rotate me</div>
+	<div class="skew">skew me</div>
+
+</body>
+
+</html>

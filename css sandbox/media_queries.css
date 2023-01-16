@@ -1,0 +1,50 @@
+/* Smartphones */
+@media only screen and (max-width: 500px) {
+    .box1 {
+        width: 50%
+    }
+}
+
+/* Tablet */
+@media(min-width: 501px) and (max-width: 768px) {
+    body {
+        background: blue;
+    }
+
+    #tablet h1 {
+        display: block;
+    }
+}
+
+/* Normal */
+@media(min-width: 769px) and (max-width: 1200px) {
+    body {
+        background: green;
+    }
+
+    #normal h1 {
+        display: block;
+    }
+}
+
+/* Widescreen */
+@media(min-width: 1201px) {
+    body {
+        background: black;
+    }
+
+    #widescreen h1 {
+        display: block;
+    }
+}
+
+/* Landscape */
+@media(max-height: 500px) {
+    body {
+        background: orange;
+    }
+
+    #landscape h1 {
+        display: block;
+    }
+}

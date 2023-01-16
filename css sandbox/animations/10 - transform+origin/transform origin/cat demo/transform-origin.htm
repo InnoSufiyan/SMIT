@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transition</title>
+<style type="text/css">
+
+img {
+	width: 300px;
+	display: block;
+	margin: auto;
+	margin-bottom: 70px;
+	margin-top: 70px;
+	transition: transform 1s;
+}
+
+.second {
+	transform-origin: top left;
+	margin-bottom: 0;
+}
+
+.first:hover, .second:hover {
+	transform: rotate(30deg);
+}
+
+</style>
+</head>
+
+<body>
+
+	<img src="cat.jpg" alt="" class="first">
+	<img src="cat.jpg" alt="" class="second">
+
+</body>
+</html>
