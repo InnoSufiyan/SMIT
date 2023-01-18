@@ -1,0 +1,13 @@
+img {
+    animation: rotationInfinite infinite ease-in-out 1s;
+}
+
+@keyframes rotationInfinite {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
