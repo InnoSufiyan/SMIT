@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .parent {
+            /* display: flex; */
+            display: grid;
+            width: 50vw;
+            background-color: red;
+            grid-template-areas: 'children1 children1 children1 children1 children1 children1 children1 children1' 'children2 children2 children2 children3 children3 children3 children4 children4'
+
+        }
+
+        .children {
+            background-color: blue;
+            padding: 30px 60px;
+            border: 2px solid green;
+            border-radius: 10px;
+
+        }
+
+        .children1 {
+            grid-area: children1;
+        }
+
+        .children2 {
+            grid-area: children2;
+        }
+
+        .children3 {
+            grid-area: children3;
+        }
+
+        .children4 {
+            grid-area: children4;
+        }
+
+        .children5 {
+            grid-area: children5;
+        }
+
+        .children6 {
+            grid-area: children6;
+        }
+
+        .children7 {
+            grid-area: children7;
+        }
+
+        .children8 {
+            grid-area: children8;
+        }
+
+        .children9 {
+            grid-area: children9;
+        }
+
+        .children10 {
+            grid-area: children10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="children children1">1</div>
+        <div class="children children2">2</div>
+        <div class="children children3">3</div>
+        <div class="children children4">4</div>
+        <div class="children children5">5</div>
+        <div class="children children6">6</div>
+        <div class="children children7">7</div>
+        <div class="children children8">8</div>
+        <div class="children children9">9</div>
+        <div class="children children10">10</div>
+    </div>
+</body>
+
+</html>
