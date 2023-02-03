@@ -1,23 +1,54 @@
-// var firstName = prompt("What is your first name??")
-// var lastName = prompt("What is your last name??")
-var day = prompt("Which day's menu , you want to know??")
+var firstName = prompt("What is your first name??")
+var lastName = prompt("What is your last name??")
 
-if (day == "monday") {
-    alert("murgi ki karahi")
-} else if (day == "tuesday") {
-    alert("sabzi")
-} else if (day == "wednesday") {
-    alert("sabzi")
-} else if (day == "thursday") {
-    alert("murgi")
-} else if (day == "friday") {
-    alert("biryani")
-} else if (day == "saturday") {
-    alert("daal chawal")
-} else {
-    alert("holiday")
-}
+var age = prompt("What is your age??")
 
+
+
+console.log("My name is " + firstName + " " + lastName + " and your current age is " + age + " and after 5 years you will be " + (Number(age) + 5))   //ES5
+
+// template literals       ES6
+console.log(`My name is ${firstName} ${lastName} and your current age is ${age} and after 5 years you will be ${Number(age) + 5}`)
+
+// data type
+
+// number
+// string
+// boolean
+// undefined
+// null
+
+var student;
+
+console.log(student)
+console.log(student1)
+
+
+
+
+
+// var day = prompt("Which day's menu , you want to know??")
+
+// if (day == "monday") {
+//     console.log("murgi ki karahi")
+// } else if (day == "tuesday") {
+//     console.log("sabzi")
+// } else if (day == "wednesday") {
+//     console.log("sabzi")
+// } else if (day == "thursday") {
+//     console.log("murgi")
+// } else if (day == "friday") {
+//     console.log("biryani")
+// } else if (day == "saturday") {
+//     console.log("daal chawal")
+// } else {
+//     console.log("holiday")
+// }
+
+
+// var yehMeraH1Hai = document.getElementsByTagName('h1')
+
+// console.log(yehMeraH1Hai)
 
 
 
@@ -30,3 +61,30 @@ if (day == "monday") {
 // <  smaller than
 // >=  greater than or equal too
 // <=  smaller than or equal too
+
+
+// var name;
+
+// var name = "sufiyan"
+
+// var name1;
+
+
+
+
+
+// let price = "700"
+
+// let price1;
+
+
+
+// price = "300"
+
+// const price2 = 5000;
+
+// price2 = 10000;
+
+
+// console.log(price2)
+
