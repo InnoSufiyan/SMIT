@@ -71,18 +71,37 @@
 //team A = 50, 20, 15, 3
 // team B = 20, 50, 9, 3
 
-var teamA = 180;
-var teamB = 50;
+alert("blah blah")
 
-if (teamA > teamB && teamA > 100) {
-    console.log("teamA won the match with marks " + teamA)
-} else if (teamA == teamB && teamA > 100 && teamB > 100) {
-    console.log("Match draw because both have same marks " + teamA)
-} else if (!(teamA > 100) && !(teamB > 100)) {
-    console.log("both teams lost the match")
-} else {
-    console.log("teamB won the match with marks " + teamB)
+// var isPetrol = true;
+// var doodhWalaOpen = true;
+
+// if(isPetrol && doodhWalaOpen) {
+//     console.log("door waley doodh waley sey doodh le aao")
+// } else if(isPetrol || doodhWalaOpen) {
+//     console.log("qareeb wley sey le aao")
+// } else {
+//     console.log("khaali haath ghar aajao")
+// }
+var a = 1;
+var b = 3;
+var c = 2;
+var d = 2;
+var e;
+var g;
+var f = 420;
+var h = 320;
+var x = 3;
+var y = 4;
+
+if ((x === y || a === b) && c === d) {
+    g = h;
 }
+else {
+    e = f;
+    console.log(e)
+}
+
 
 
 
