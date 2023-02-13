@@ -71,20 +71,20 @@ if ("condition") {
 // }
 
 
-// function betaPaniLaaKarDo(liquid) {
-//     console.log(`yahaan sey utho aur ${liquid} waley cooler tak jao`)
-//     console.log("pyar o muhabbat sey glass ko pakro aur uthao")
-//     console.log("cooler ki tooti kholo aur glass ko neechey rakho")
-//     console.log(`${liquid} bharney ka wait karo, jesay hi end per puhnchey tooti band kardo`)
-//     console.log(`sambhal kar ${liquid} ka glass laao aur ${liquid} de do`)
+function betaPaniLaaKarDo(liquid) {
+    console.log(`yahaan sey utho aur ${liquid} waley cooler tak jao`)
+    console.log("pyar o muhabbat sey glass ko pakro aur uthao")
+    console.log("cooler ki tooti kholo aur glass ko neechey rakho")
+    console.log(`${liquid} bharney ka wait karo, jesay hi end per puhnchey tooti band kardo`)
+    console.log(`sambhal kar ${liquid} ka glass laao aur ${liquid} de do`)
 
-// }
+}
 
-// betaPaniLaaKarDo("pani")
-// betaPaniLaaKarDo("apple juice")
-// betaPaniLaaKarDo("coffee")
-// betaPaniLaaKarDo("mosambi juice")
-// betaPaniLaaKarDo("tea")
+betaPaniLaaKarDo("pani")
+betaPaniLaaKarDo("apple juice")
+betaPaniLaaKarDo("coffee")
+betaPaniLaaKarDo("mosambi juice")
+betaPaniLaaKarDo("tea")
 
 
 // function juiceBanao(fruit1, fruit2) {
