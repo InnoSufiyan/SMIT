@@ -27,12 +27,15 @@ var teacher = "sufiyan"
 // var multiValues = ["Muhammad Naif", "Muhammad Mustafa", "Aamir", true, 365, "asdasdasda", teacher]
 var students = ["Muhammad Naif", "Muhammad Mustafa", "Aamir", "Ibad"]
 
-console.log(students)
+console.log(students);
 
-var studentsWithJamai = students.splice(2, 2)
+students[2] = "falana dhimkana";
 
-console.log(studentsWithJamai)
-console.log(students)
+console.log(students);
+var studentsWithJamai = students.splice(2, 2);
+
+// console.log(studentsWithJamai)
+// console.log(students)
 //Adding in Start
 // var checkingAdditionInStart = students.unshift("Muhammad Javed")
 
@@ -44,5 +47,15 @@ console.log(students)
 
 // Removing from end
 // const removingFromEnd = students.pop()
+
+
+// students.includes("naif")
+
+//it will check whether naif is available in the students array or not and will return true or false
+
+
+// students.indexOf("naif")
+
+//it will check at what index number naif is available in the students array and will return index number if available and will return -1 if not available
 
 
