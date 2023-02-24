@@ -53,20 +53,68 @@
 
 
 
-var x = "7";
+// var x = "7";
 
-// x = +x + 5
+// // x = +x + 5
 
-console.log(x);
-
-
-x += 10
-
-x -= 3         // x = x - 3
-
-console.log(x)
+// console.log(x);
 
 
+// x += 10
+
+// x -= 3         // x = x - 3
+
+// console.log(x)
+
+
+// var myNewArray = ["daad", 1, true, {
+//     myObjectInArray: "adasdsadsadas"
+// }]
+
+// var myNewArray2 = myNewArray
+
+// console.log(myNewArray2, "==>>myNewArray2")
+
+// myNewArray2[0] = "sufiyan"
+
+// console.log(myNewArray, "==>>myNewArray")
+// console.log(myNewArray2, "==>>myNewArray2")
+
+// var myNewArray3 = myNewArray2
+
+// myNewArray3[3] = "agram shagram"
+
+// console.log(myNewArray, "==>>myNewArray")
+// console.log(myNewArray2, "==>>myNewArray2")
+// console.log(myNewArray3, "==>>myNewArray3")
 
 
 
+// var myCar = {
+//     name: "corolla",
+//     properties: ["red", "2016", "toyota"],
+//     hybrid: true,
+//     startCar: function () {
+//         console.log("starting Car")
+//     },
+//     stopCar: function () {
+//         console.log("stoping car")
+//     }
+// }
+
+// var myCar2 = myCar
+
+// console.log(myCar, "==>>myCar")
+
+
+// myCar2.name = "Mercedes"
+
+// console.log(myCar, "==>>myCar")
+// console.log(myCar2, "==>>myCar2")
+
+// var myName = ["sufiyan", "zakir"]
+
+// var myName2 = myName
+
+
+// myName2[0] = "naif"
