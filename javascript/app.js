@@ -71,7 +71,7 @@
 //team A = 50, 20, 15, 3
 // team B = 20, 50, 9, 3
 
-alert("blah blah")
+// alert("blah blah")
 
 // var isPetrol = true;
 // var doodhWalaOpen = true;
@@ -83,24 +83,24 @@ alert("blah blah")
 // } else {
 //     console.log("khaali haath ghar aajao")
 // }
-var a = 1;
-var b = 3;
-var c = 2;
-var d = 2;
-var e;
-var g;
-var f = 420;
-var h = 320;
-var x = 3;
-var y = 4;
+// var a = 1;
+// var b = 3;
+// var c = 2;
+// var d = 2;
+// var e;
+// var g;
+// var f = 420;
+// var h = 320;
+// var x = 3;
+// var y = 4;
 
-if ((x === y || a === b) && c === d) {
-    g = h;
-}
-else {
-    e = f;
-    console.log(e)
-}
+// if ((x === y || a === b) && c === d) {
+//     g = h;
+// }
+// else {
+//     e = f;
+//     console.log(e)
+// }
 
 
 
@@ -167,3 +167,37 @@ else {
 
 // console.log(price2)
 
+// var a = "kuch bhi"
+
+// function meraFunction() {
+//     var b = "mera functional scope ka variable"
+
+// }
+
+
+// if(true) {
+//     var c = "mera c variable"
+// }
+
+// console.log(a)
+// console.log(b)
+// console.log(c)
+
+// let a = "kuch bhi"
+
+// function meraFunction() {
+//     let b = "mera functional scope ka variable"
+// }
+
+// if (true) {
+//     let c = "mera c variable"
+// }
+
+// for(let i = 0; i < ["dasd", "adad", "dada"].length; i++) {
+//     console.log(i)
+// }
+
+// console.log(a)
+// console.log(i)
+// console.log(c)
+// console.log(b)
