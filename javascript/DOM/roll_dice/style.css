@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right, #b3282f, #6b3074);
+}
+
+
+.mainWindow {
+    height: 400px;
+    width: 600px;
+    background-color: #d6a2ae;
+    margin: 130px auto 0 auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.active {
+    background-color: #b26e87;
+}
+
+.diceScore {
+    background-color: #bf2e57;
+    width: 100px;
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+.centerLine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hidden {
+    display: none;
+}
