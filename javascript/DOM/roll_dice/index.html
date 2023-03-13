@@ -14,6 +14,8 @@
 <body>
 
     <div class="mainWindow">
+        <div class="player1PreviousScore" style="position:absolute; left: 0; background-color: white; padding: 10px;">0</div>
+        <div class="player2PreviousScore" style="position:absolute; right: 0; background-color: white; padding: 10px;">0</div>
         <div class="centerLine d-flex flex-column justify-content-around">
             <button class="newGameBtn">new game</button>
             <div><img  class="diceImg hidden" src="./assets/1.png" alt=""></div>
@@ -21,12 +23,12 @@
             <button  class="holdBtn">Hold</button>
         </div>
         <div class="row" style="width: 100%; --bs-gutter-x: 0; height: 100%;">
-            <div class="col d-flex flex-column align-items-center justify-content-around">
+            <div class="player1 col d-flex flex-column align-items-center justify-content-around">
                 <h2>Player 1</h2>
                 <h2 class="player1Score">0</h2>
                 <div class="diceScore player1DiceScore">0</div>
             </div>
-            <div class="col d-flex flex-column align-items-center justify-content-around active">
+            <div class="player2 col d-flex flex-column align-items-center justify-content-around active">
                 <h2>Player 2</h2>
                 <h2 class="player2Score">0</h2>
                 <div class="diceScore player2DiceScore">0</div>
