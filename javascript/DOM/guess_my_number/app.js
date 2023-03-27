@@ -9,24 +9,32 @@ checkButton.addEventListener('click', () => {
 
     if (score.textContent > 0) {
 
+        console.log(myUserInput.value === "", "==>>>myUserInput")
+
+        if (myUserInput.value !== "") {
 
 
-        var myNumber = Math.round(Math.random() * 20)
-        console.log(myNumber)
-        console.log(myUserInput.value)
-        console.log(score.textContent)
+            var myNumber = Math.round(Math.random() * 20)
+            console.log(myNumber)
+            console.log(myUserInput.value)
+            console.log(score.textContent)
 
-        if (myUserInput.value == myNumber) {
-            alert("You win")
-            score.textContent = +score.textContent + 1
-            if (highScore.textContent < score.textContent) {
-                highScore.textContent = score.textContent
+            if (myUserInput.value == myNumber) {
+                alert("You win")
+                score.textContent = +score.textContent + 1
+                if (highScore.textContent < score.textContent) {
+                    highScore.textContent = score.textContent
+                }
+
+            } else {
+                console.log("You loose")
+                score.textContent = +score.textContent - 1
+                myUserInput.value = ""
             }
-
         } else {
-            console.log("You loose")
-            score.textContent = +score.textContent - 1
+            alert("Kuch to likh ley")
         }
+
     } else {
         console.log("sorry aap game nai khel saktey, please try again")
     }
