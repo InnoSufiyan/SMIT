@@ -58,8 +58,8 @@
 
 //function declaration
 
-myFunction()
-myFunction()
+// myFunction()
+// myFunction()
 
 // function myFunction() {
 //     console.log("This is our function declaration")
@@ -105,3 +105,61 @@ myFunction()
 // const myFunction3 = (name, age) => `My name is ${name} and my age is ${age}`
 
 // myFunction3("sufiyan", 32)
+
+
+// function myFunction(liquid) {
+//     console.log("sab sey pehley yahaan sey utho")
+//     console.log("cooler k pass jao")
+//     console.log("glass uthao")
+//     console.log("tooti k neechey rakho")
+//     console.log("tooti ko on karo")
+//     console.log(liquid + " bharo")
+//     console.log("tooti ko band karo, jab "+ liquid + " bhar jaey")
+//     console.log("aur glass meray pass le kar aao")
+// }
+
+
+
+// myFunction("cold drink")
+
+// import calculationOfPrice from "./calculationPrice";
+
+
+// const productPrice = 25;
+
+
+
+// function calculationOfPrice(pp) {
+//     let chargesFromCustomer;
+//     if (pp > 100) {
+//         chargesFromCustomer = pp
+//     } else if (pp > 50 && pp < 100) {
+//         chargesFromCustomer = pp + 5 + (pp * .3)
+//     } else {
+//         chargesFromCustomer = pp + 5
+//     }
+//     return chargesFromCustomer
+// }
+// calculationOfPrice(250)
+
+
+
+
+// function paymentToShop() {
+//     //asdada
+//     const valueAfterCalculation = calculationOfPrice(productPrice)
+//     if(valueAfterCalculation > 200) {
+//         costToCharge = valueAfterCalculation
+//     } else {
+//         costToCharge = 0
+
+//     }
+//     HBL()
+// }
+
+// paymentToShop()
+
+
+
+
+
