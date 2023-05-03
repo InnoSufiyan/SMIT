@@ -59,40 +59,70 @@
 
 // console.log(myDiv, "==>>myDiv")
 
-const input = document.querySelector('input')
-const button = document.querySelector('button')
-const ul = document.querySelector('ul')
+// const input = document.querySelector('input')
+// const button = document.querySelector('button')
+// const ul = document.querySelector('ul')
 
 
-console.log(button)
-console.log(input)
+// console.log(button)
+// console.log(input)
 
-ul.replaceChild()
-
-
-button.addEventListener('click', () => {
-
-    console.log(input.value, "===>>direct input")
-    console.log(input.value.trim(), "===>>input trimmed")
+// ul.replaceChild()
 
 
+// button.addEventListener('click', () => {
 
-    if(input.value.trim() === "") {
+//     console.log(input.value, "===>>direct input")
+//     console.log(input.value.trim(), "===>>input trimmed")
 
-        input.value = ""
-        return "dadsa"
+
+
+//     if(input.value.trim() === "") {
+
+//         input.value = ""
+//         return "dadsa"
+//     }
+
+//     console.log(input.value)
+//     console.log(ul)
+//     const li = document.createElement('li')
+
+//     li.innerText= input.value
+
+//     ul.appendChild(li)
+
+//     input.value = ""
+
+//     console.log(ul)
+
+// })
+
+function submission() {
+    var username = document.querySelector('#username').value
+    var email = document.querySelector('#email').value
+    var password = document.querySelector('#password')
+
+    if(password.value.length < 8) {
+        alert("insaan ka bacha ban jaa")
+        console.log(password)
+        password.style.backgroundColor = 'red'
+        password.value = "dhang ka password likho"
     }
 
-    console.log(input.value)
-    console.log(ul)
-    const li = document.createElement('li')
+    var dataToSend = {
+        username,
+        emailAddress: email,
+        password: password.value
+    }
 
-    li.innerText= input.value
+    console.log(dataToSend, "==>>dataToSend")
 
-    ul.appendChild(li)
+    
+}
 
-    input.value = ""
+function swap() {
+    const myImg = document.querySelector('#myImg')
 
-    console.log(ul)
+    myImg.src = 'https://image.shutterstock.com/image-photo/healthy-food-clean-eating-selection-260nw-722718082.jpg'
+}
 
-})
