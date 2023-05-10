@@ -10,7 +10,11 @@ console.log(button)
 console.log(itemList)
 console.log(alertPara)
 
-let items = []
+console.log(JSON.parse(localStorage.getItem('myList')))
+
+let items = JSON.parse(localStorage.getItem('myList')) || []
+
+itemList.innerHTML = items.join("")
 
 const alertFoo = (alertText) => {
     alertPara.innerHTML = alertText
@@ -25,33 +29,91 @@ const alertFoo = (alertText) => {
 const editFoo = (uId) => {
     console.log("edit chal raha hai", uId)
 
-    //itemList k tamam items main == uId
-    // input field for edited data
-    // itemList specifici item.innerHtml change through input data
+    button.innerText = 'Edit'
+
+    const myList = Array.from(itemList.childNodes)
+
+    console.log(myList)
+
+    const filteredData = myList.filter((singleItem) => singleItem.id === uId)
+
+    input.value = filteredData[0].querySelector('p').innerText
+
+    button.removeEventListener('click', submission)
+
+    button.addEventListener('click', ()=> editProcess(uId))
 }
-const deleteFoo = (uId) => {
-    console.log("delete chal raha hai", uId)
-
-    const meraItemArray = Array.from(itemList.childNodes)
 
 
-    const filteredData = meraItemArray.filter((singleItem) => singleItem.id !== uId)
+const editProcess = (uId) => {
+    console.log("editing process uid" , uId)
+    const indexNum = items.findIndex((singleItem)=> singleItem.includes(uId))
 
-    console.log(filteredData)
+    console.log(indexNum, "===>>indexNum")
 
-    items = filteredData.map((singleItem) => `<div id="${singleItem.id}" class="item">
-    <p>${singleItem.querySelector('p').textContent}</p>
-    <button onclick="editFoo('${singleItem.id}')">Edit</button>
-    <button onclick="deleteFoo('${singleItem.id}')">Delete</button>
+    items.splice(indexNum, 1, `<div id="${uId}" class="item">
+    <p>${input.value}</p>
+    <button onclick="editFoo('${uId}')">Edit</button>
+    <button onclick="deleteFoo('${uId}')">Delete</button>
     </div>`)
 
     itemList.innerHTML = items.join("")
+    input.value = ""
+
+    button.innerText = 'Submit'
+
+    button.removeEventListener('click', editProcess)
+
+    button.addEventListener('click', submission)
+}
+
+
+
+
+
+
+
+const deleteFoo = (uId) => {
+    console.log("delete chal raha hai", uId)
+
+    // const meraItemArray = Array.from(itemList.childNodes)
+
+    console.log(items, "==>>items")
+
+    const indexNum = items.findIndex((singleItem)=> singleItem.includes(uId))
+
+    console.log(indexNum, "===>>indexNum")
+
+    items.splice(indexNum, 1)
+
+    itemList.innerHTML = items.join("")
+
+    alertFoo(`Your item is deleted`)
+
+    // const filteredData = meraItemArray.filter((singleItem) => singleItem.id !== uId)
+
+    // console.log(filteredData)
+
+    // items = filteredData.map((singleItem) => `<div id="${singleItem.id}" class="item">
+    // <p>${singleItem.querySelector('p').textContent}</p>
+    // <button onclick="editFoo('${singleItem.id}')">Edit</button>
+    // <button onclick="deleteFoo('${singleItem.id}')">Delete</button>
+    // </div>`)
+
+    // itemList.innerHTML = items.join("")
 
 
 
 }
 
 const submission = () => {
+
+    if(input.value === "") {
+        alertFoo(`bhai kuch likh to ley`)
+        return
+    }
+
+
     const uniqueID = new Date().getTime()
 
     console.log(uniqueID)
@@ -71,6 +133,9 @@ const submission = () => {
 
     alertFoo(`${input.value} is added in your bucket`)
     input.value = ""
+
+
+    localStorage.setItem('myList', JSON.stringify(items))
 
 }
 
