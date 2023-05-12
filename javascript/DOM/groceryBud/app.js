@@ -10,9 +10,10 @@ console.log(button)
 console.log(itemList)
 console.log(alertPara)
 
-console.log(JSON.parse(localStorage.getItem('myList')))
-
+// let items = JSON.parse(localStorage.getItem('myList')) || []
 let items = JSON.parse(localStorage.getItem('myList')) || []
+
+console.log(items, "=>>items")
 
 itemList.innerHTML = items.join("")
 
@@ -33,20 +34,24 @@ const editFoo = (uId) => {
 
     const myList = Array.from(itemList.childNodes)
 
+    console.log(itemList.childNodes)
     console.log(myList)
 
     const filteredData = myList.filter((singleItem) => singleItem.id === uId)
+
+    console.log(filteredData)
 
     input.value = filteredData[0].querySelector('p').innerText
 
     button.removeEventListener('click', submission)
 
-    button.addEventListener('click', ()=> editProcess(uId))
+    button.addEventListener('click', ()=>editProcess(uId))
 }
 
 
 const editProcess = (uId) => {
     console.log("editing process uid" , uId)
+
     const indexNum = items.findIndex((singleItem)=> singleItem.includes(uId))
 
     console.log(indexNum, "===>>indexNum")
@@ -58,6 +63,9 @@ const editProcess = (uId) => {
     </div>`)
 
     itemList.innerHTML = items.join("")
+
+    localStorage.setItem('myList', JSON.stringify(items))
+
     input.value = ""
 
     button.innerText = 'Submit'
@@ -90,6 +98,8 @@ const deleteFoo = (uId) => {
 
     alertFoo(`Your item is deleted`)
 
+    localStorage.setItem('myList', JSON.stringify(items))
+
     // const filteredData = meraItemArray.filter((singleItem) => singleItem.id !== uId)
 
     // console.log(filteredData)
@@ -101,9 +111,6 @@ const deleteFoo = (uId) => {
     // </div>`)
 
     // itemList.innerHTML = items.join("")
-
-
-
 }
 
 const submission = () => {
