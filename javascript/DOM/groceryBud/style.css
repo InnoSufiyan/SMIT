@@ -10,3 +10,7 @@
 .alert {
     visibility: hidden;
 }
+
+.edit {
+    display: none;
+}

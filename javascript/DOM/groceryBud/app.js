@@ -1,5 +1,6 @@
 const input = document.querySelector('input')
 const button = document.querySelector('.submit')
+const editButton = document.querySelector('.edit')
 const itemList = document.querySelector('.itemList')
 const clearBtn = document.querySelector('.clear')
 const alertPara = document.querySelector('.alert')
@@ -9,6 +10,8 @@ console.log(input)
 console.log(button)
 console.log(itemList)
 console.log(alertPara)
+
+let editedUID = null
 
 // let items = JSON.parse(localStorage.getItem('myList')) || []
 let items = JSON.parse(localStorage.getItem('myList')) || []
@@ -30,7 +33,13 @@ const alertFoo = (alertText) => {
 const editFoo = (uId) => {
     console.log("edit chal raha hai", uId)
 
-    button.innerText = 'Edit'
+    editedUID = uId
+
+    button.style.display = 'none'
+
+    editButton.style.display = 'inline-block'
+
+    editButton.addEventListener('click', editProcess)
 
     const myList = Array.from(itemList.childNodes)
 
@@ -42,37 +51,38 @@ const editFoo = (uId) => {
     console.log(filteredData)
 
     input.value = filteredData[0].querySelector('p').innerText
-
-    button.removeEventListener('click', submission)
-
-    button.addEventListener('click', ()=>editProcess(uId))
 }
 
 
-const editProcess = (uId) => {
-    console.log("editing process uid" , uId)
+const editProcess = () => {
 
-    const indexNum = items.findIndex((singleItem)=> singleItem.includes(uId))
+    const indexNum = items.findIndex((singleItem) => singleItem.includes(editedUID))
 
     console.log(indexNum, "===>>indexNum")
 
-    items.splice(indexNum, 1, `<div id="${uId}" class="item">
+    console.log(input.value, "===>>input value")
+
+    items.splice(indexNum, 1, `<div id="${editedUID}" class="item">
     <p>${input.value}</p>
-    <button onclick="editFoo('${uId}')">Edit</button>
-    <button onclick="deleteFoo('${uId}')">Delete</button>
+    <button onclick="editFoo('${editedUID}')">Edit</button>
+    <button onclick="deleteFoo('${editedUID}')">Delete</button>
     </div>`)
+
+    console.log(items, "==>>items after edit")
 
     itemList.innerHTML = items.join("")
 
     localStorage.setItem('myList', JSON.stringify(items))
 
-    input.value = ""
-
     button.innerText = 'Submit'
 
-    button.removeEventListener('click', editProcess)
+    editButton.style.display = 'none'
 
-    button.addEventListener('click', submission)
+    button.style.display = 'inline-block'
+
+    setTimeout(() => {
+        input.value = ""
+    }, 1000)
 }
 
 
@@ -88,11 +98,13 @@ const deleteFoo = (uId) => {
 
     console.log(items, "==>>items")
 
-    const indexNum = items.findIndex((singleItem)=> singleItem.includes(uId))
+    const indexNum = items.findIndex((singleItem) => singleItem.includes(uId))
 
     console.log(indexNum, "===>>indexNum")
 
     items.splice(indexNum, 1)
+
+    console.log(items, "==>>items after delete")
 
     itemList.innerHTML = items.join("")
 
@@ -115,7 +127,7 @@ const deleteFoo = (uId) => {
 
 const submission = () => {
 
-    if(input.value === "") {
+    if (input.value === "") {
         alertFoo(`bhai kuch likh to ley`)
         return
     }
