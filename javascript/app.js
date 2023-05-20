@@ -1,3 +1,6 @@
+"use strict";
+
+
 // var firstName = prompt("What is your first name??")
 // var lastName = prompt("What is your last name??")
 
@@ -201,3 +204,33 @@
 // console.log(i)
 // console.log(c)
 // console.log(b)
+
+
+console.log(this)
+
+function meraFunction() {
+    console.log(this)
+}
+meraFunction()
+
+const a = () => {
+    console.log(this)
+}
+
+a()
+
+const b = function() {
+    console.log(this)
+}
+
+b()
+
+const obj = {
+    name: "sufiyan",
+    calcAge: ()=> {
+        console.log(this)
+    }
+
+}
+
+obj.calcAge()
