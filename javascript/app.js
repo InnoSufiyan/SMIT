@@ -201,3 +201,35 @@
 // console.log(i)
 // console.log(c)
 // console.log(b)
+
+
+// kuchBhi()
+
+// console.log(a)
+// console.log(b)
+
+// function kuchBhi() {
+//     console.log("asdadasdadas")
+// }
+
+// const meraArrowFunc = () => {
+//     console.log("asasd")
+// }
+
+// var a = "kuch bhi"
+
+// let b = "ddas"
+
+// var a;
+// let b;
+// b =10
+
+
+
+// let nameOfBestStudent = "sufiyan"
+
+// nameOfBestStudent = "jaffar"
+
+// const bestCricketer = "BabarAzam"
+
+// bestCricketer = "kholi"
