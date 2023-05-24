@@ -1,3 +1,59 @@
+"use strict";
+
+// console.log(this)
+
+// function foo() {
+//     console.log(this)
+// }
+
+// foo()
+
+// const a = () => {
+//     console.log(this)
+// }
+
+// a()
+
+// var fatherName = "Aslam"
+
+// const jonas = {
+//     name: 'jonas',
+//     yearOfBirth: 1989,
+//     calcAge: function() {
+//         console.log(this)
+//         console.log(2023 - this.yearOfBirth)
+//     },
+//     fatherNameMethod: ()=> {
+//         console.log(this.fatherName)
+//     }
+// }
+
+
+
+// jonas.fatherNameMethod()
+
+// const f = jonas.calcAge
+
+// f()
+
+
+// jonas.calcAge()
+
+// jonas.father = "aslam"
+
+// jonas.schoolName = "peela school"
+
+// console.log(jonas)
+
+// const zakirMatilda = {
+//     yearOfBirth: 2000
+// }
+
+// zakirMatilda.calcAge = jonas.calcAge
+
+// zakirMatilda.calcAge()
+
+
 // var firstName = prompt("What is your first name??")
 // var lastName = prompt("What is your last name??")
 
@@ -203,33 +259,35 @@
 // console.log(b)
 
 
-// kuchBhi()
-
-// console.log(a)
-// console.log(b)
-
-// function kuchBhi() {
-//     console.log("asdadasdadas")
+             //params
+// function myFoo(a,b,c) {
+//     //execution
 // }
 
-// const meraArrowFunc = () => {
-//     console.log("asasd")
+// myFoo(1,2,3)
+//     //arguments
+
+// const myFoo2 = () => {
+//     //execution
 // }
+// myFoo2(1,2,3)
 
-// var a = "kuch bhi"
+// console.log(name)
 
-// let b = "ddas"
+// var name;
 
-// var a;
-// let b;
-// b =10
+// name = 29 //addressNum
 
+// name = 31 //addressNum
 
+// var newName = 31
 
-// let nameOfBestStudent = "sufiyan"
+// console.log(name)
 
-// nameOfBestStudent = "jaffar"
+// var a = 31
+// var b = 30
 
-// const bestCricketer = "BabarAzam"
+// var name = {age: 30}
+// var name2 = name
 
-// bestCricketer = "kholi"
+// name.age = 31
