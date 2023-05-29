@@ -1,5 +1,58 @@
 "use strict";
 
+// console.log(this)
+
+// function foo() {
+//     console.log(this)
+// }
+
+// foo()
+
+// const a = () => {
+//     console.log(this)
+// }
+
+// a()
+
+// var fatherName = "Aslam"
+
+// const jonas = {
+//     name: 'jonas',
+//     yearOfBirth: 1989,
+//     calcAge: function() {
+//         console.log(this)
+//         console.log(2023 - this.yearOfBirth)
+//     },
+//     fatherNameMethod: ()=> {
+//         console.log(this.fatherName)
+//     }
+// }
+
+
+
+// jonas.fatherNameMethod()
+
+// const f = jonas.calcAge
+
+// f()
+
+
+// jonas.calcAge()
+
+// jonas.father = "aslam"
+
+// jonas.schoolName = "peela school"
+
+// console.log(jonas)
+
+// const zakirMatilda = {
+//     yearOfBirth: 2000
+// }
+
+// zakirMatilda.calcAge = jonas.calcAge
+
+// zakirMatilda.calcAge()
+
 
 // var firstName = prompt("What is your first name??")
 // var lastName = prompt("What is your last name??")
@@ -206,31 +259,35 @@
 // console.log(b)
 
 
-console.log(this)
+             //params
+// function myFoo(a,b,c) {
+//     //execution
+// }
 
-function meraFunction() {
-    console.log(this)
-}
-meraFunction()
+// myFoo(1,2,3)
+//     //arguments
 
-const a = () => {
-    console.log(this)
-}
+// const myFoo2 = () => {
+//     //execution
+// }
+// myFoo2(1,2,3)
 
-a()
+// console.log(name)
 
-const b = function() {
-    console.log(this)
-}
+// var name;
 
-b()
+// name = 29 //addressNum
 
-const obj = {
-    name: "sufiyan",
-    calcAge: ()=> {
-        console.log(this)
-    }
+// name = 31 //addressNum
 
-}
+// var newName = 31
 
-obj.calcAge()
+// console.log(name)
+
+// var a = 31
+// var b = 30
+
+// var name = {age: 30}
+// var name2 = name
+
+// name.age = 31
