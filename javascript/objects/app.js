@@ -118,3 +118,69 @@
 
 
 // myName2[0] = "naif"
+
+
+//constructor function
+
+// const student1 = {
+//     name : "naif",
+//     section: "E",
+//     course: "web n mobile hybrid",
+//     institute: "saylani"
+// }
+// const student2 = {
+//     name : "hamza",
+//     section: "E",
+//     course: "web n mobile hybrid",
+//     institute: "saylani"
+// }
+// const student3 = {
+//     name : "reyyan",
+//     section: "E",
+//     course: "web n mobile hybrid",
+//     institute: "saylani"
+// }
+// const student4 = {
+//     name : "hammad",
+//     section: "E",
+//     course: "web n mobile hybrid",
+//     institute: "saylani"
+// }
+// const student5 = {
+//     name : "ahsan",
+//     section: "E",
+//     course: "web n mobile hybrid",
+//     institute: "saylani"
+// }
+
+
+function Student(name, section, course, institute) {
+    this.name = name
+    this.section = section
+    this.course = course
+    this.institute = institute
+    this.fullName = function (fatherName) {       //adam
+        console.log(this.name + " " + fatherName)    //adam
+    }
+}
+
+// Student.prototype.fullName = function (fatherName) {       //adam
+//     console.log(this.name + " " + fatherName)    //adam
+// }
+
+const student1 = new Student("naif", "E", "web n mobile hybrid", "saylani")
+const student2 = new Student("reyyan", "E", "web n mobile hybrid", "saylani")
+const student3 = new Student("hammad", "E", "web n mobile hybrid", "saylani")
+const student4 = new Student("zakir", "E", "web n mobile hybrid", "saylani")
+const student5 = new Student("matilda", "E", "web n mobile hybrid", "saylani")
+
+console.log(student1)
+console.log(student2)
+console.log(student3)
+console.log(student4)
+console.log(student5)
+
+// this.fullName = function(fatherName) {       //adam
+//     console.log(this.name + " " + fatherName)    //adam
+// }
+
