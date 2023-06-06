@@ -83,32 +83,32 @@ function signupHandler() {
 
 
     if (firstName.value !== "" && surName.value !== "" && mobNum.value !== "" && password.value !== "" && date !== undefined && month !== undefined && year !== undefined && gender !== undefined) {
-        // if (password.value.length < 8) return alert("password should contain 8 characters")
+        if (password.value.length < 8) return alert("password should contain 8 characters")
 
-        // const userObj = {
-        //     firstName: firstName.value,
-        //     surName: surName.value,
-        //     mobileNum: mobNum.value,
-        //     password: password.value,
-        //     date: new Date(`${year}-${month}-${date}`),
-        //     email: email.value,
-        //     // gender: gender
-        //     gender
-        // }
+        const userObj = {
+            firstName: firstName.value,
+            surName: surName.value,
+            mobileNum: mobNum.value,
+            password: password.value,
+            date: new Date(`${year}-${month}-${date}`),
+            email: email.value,
+            // gender: gender
+            gender
+        }
 
 
 
-        // users.push(userObj)
+        users.push(userObj)
 
-        // localStorage.setItem('users', JSON.stringify(users))
+        localStorage.setItem('users', JSON.stringify(users))
 
-        // alert("User signup successfully")
+        alert("User signup successfully")
 
-        // firstName.value = ""
-        // surName.value = ""
-        // mobNum.value = ""
-        // password.value = ""
-        // email.value = ""
+        firstName.value = ""
+        surName.value = ""
+        mobNum.value = ""
+        password.value = ""
+        email.value = ""
 
 
 
