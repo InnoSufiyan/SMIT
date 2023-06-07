@@ -29,7 +29,11 @@ const description = document.getElementById("description")
 const postInputBox = document.getElementById("postInputBox")
 const postArea = document.getElementById("postAreaId")
 
-posts.forEach((post) => {
+
+
+
+// [selected posts of logged in user]
+posts.filter((post) => post.userEmail === isLoggedInUser.email).forEach((post) => {
     var div = document.createElement('div')
     div.setAttribute('class', 'post my-5 bg-light rounded')
 
@@ -56,8 +60,7 @@ posts.forEach((post) => {
 </div>
 <div class="postData">
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quae praesentium
-        laboriosam. Ab, vel architecto ea illo eos soluta quam?
+    ${post.postContent}
     </p>
     <img src="../assets/dummyPostImage.jpg" alt="" class="img-fluid">
 </div>
@@ -141,8 +144,7 @@ function postHandler() {
 </div>
 <div class="postData">
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quae praesentium
-        laboriosam. Ab, vel architecto ea illo eos soluta quam?
+    ${postInputBox.value}
     </p>
     <img src="../assets/dummyPostImage.jpg" alt="" class="img-fluid">
 </div>
