@@ -1,0 +1,57 @@
+.avatarDummy {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.boxStyle {
+    background-color: rgb(233, 233, 233);
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profilePicture {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.postInputArea {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.commentInputArea {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.postInput {
+    width: 80%;
+    border-radius: 30px;
+}
+
+.commentInput {
+    width: 80%;
+    border-radius: 30px;
+}
+
+.postArea {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.upperPart {
+    display: flex;
+    justify-content: space-between;
+}
