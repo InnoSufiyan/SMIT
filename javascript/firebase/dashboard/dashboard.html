@@ -34,10 +34,10 @@
                             <a class="nav-link active" aria-current="page" href="../Profile/index.html">My Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">My Network</a>
+                            <a class="nav-link active" aria-current="page" href="../usersPage/usersPage.html">All Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Messaging</a>
+                            <a class="nav-link active" aria-current="page" href="#">All Jobs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Link</a>
@@ -53,7 +53,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" onclick="logoutHandler()">Logout</a></li>
+                                <li><a class="dropdown-item" id="logoutBtn">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -70,8 +70,8 @@
                 <h5 id="userName">UserName</h5>
                 <h5 id="emailAddress">User Email</h5>
                 <h6 id="mobNum">User Mobile Number</h6>
-                <h6 id="gender">User Gender</h6>
-                <h6 id="description">User Description</h6>
+                <h6 id="firstName">FirstName</h6>
+                <h6 id="lastName">lastName</h6>
             </div>
             <div class="col-6 boxStyle">
                 <div class="postInputArea">
@@ -132,7 +132,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <script type="module" src="dashboard.js"></script>
 </body>
 
 </html>

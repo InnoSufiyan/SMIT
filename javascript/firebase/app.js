@@ -1,7 +1,9 @@
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js'
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+import {
+    getFirestore, collection, addDoc, setDoc, doc
+} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDwBF3KuPeec5SLGlyOYyIrNwqpYkGe6fA",
@@ -17,6 +19,9 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 const username = document.querySelector('#username')
+const firstName = document.querySelector('#firstName')
+const lastName = document.querySelector('#lastName')
+const phNum = document.querySelector('#phNum')
 const email = document.querySelector('#email')
 const password = document.querySelector('#inputPassword')
 
@@ -24,40 +29,48 @@ const signupBtn = document.querySelector('#signup')
 
 signupBtn.addEventListener('click', signupHandler)
 
-function signupHandler() {
-    createUserWithEmailAndPassword(auth, email.value, password.value)
-        .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            if (user) {
-                console.log("user registered successfully, going to save data now")
-                addUserHandler()
-                // window.location.href = 'login.html'
-            }
-            // ...
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode)
-            console.log(errorMessage)
-            // ..
-        });
+async function signupHandler() {
+    try {
+        const response = await createUserWithEmailAndPassword(auth, email.value, password.value)
+
+        console.log(response, "==>>response")
+
+        if (response.user) {
+            addUserHandler(response.user.uid)
+        }
+    } catch (error) {
+        console.log(error)
+    }
+    // .then((userCredential) => {
+    //     // Signed in 
+    //     const user = userCredential.user;
+    //     if (user) {
+    //         console.log("user registered successfully, going to save data now")
+    //         addUserHandler()
+    //         // window.location.href = 'login.html'
+    //     }
+    //     // ...
+    // })
+    // .catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     console.log(errorCode)
+    //     console.log(errorMessage)
+    //     // ..
+    // });
 }
 
-async function addUserHandler() {
+async function addUserHandler(uid) {
     try {
-        const docRef = await addDoc(collection(db, "users"), {
-            username: username.value,
-            email: email.value
+        const response = await setDoc(doc(db, "users", uid), {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            userName: username.value,
+            email: email.value,
+            phNum: phNum.value,
         });
-        console.log("Document written with ID: ", docRef.id);
-        if (docRef.id) {
-            console.log("document is saved")
-            setTimeout(() => {
-                window.location.href = 'login.html'
-            }, 5000)
-        }
+
+        window.location.href = './login/login.html'
     } catch (e) {
         console.error("Error adding document: ", e);
     }

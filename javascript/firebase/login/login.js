@@ -26,7 +26,7 @@ function loginHandler() {
             // Signed in 
             const user = userCredential.user;
             if(user) {
-                window.location.href = 'dashboard.html'
+                window.location.href = '../dashboard/dashboard.html'
             }
             // ...
         })
