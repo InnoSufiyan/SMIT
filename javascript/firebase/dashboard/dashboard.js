@@ -1,21 +1,11 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js'
-import { getAuth, onAuthStateChanged, signOut  } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import {
-    getFirestore, doc, getDoc
-} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyDwBF3KuPeec5SLGlyOYyIrNwqpYkGe6fA",
-    authDomain: "jobs-45474.firebaseapp.com",
-    projectId: "jobs-45474",
-    storageBucket: "jobs-45474.appspot.com",
-    messagingSenderId: "167672939141",
-    appId: "1:167672939141:web:6128592b657f1994665fec"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+    auth,
+    db,
+    doc,
+    getDoc,
+    onAuthStateChanged,
+    signOut
+} from '../firebaseConfig.js'
 
 const userNameHTML = document.getElementById('userName')
 const emailAddressHTML = document.getElementById('emailAddress')
@@ -64,7 +54,6 @@ async function getUserData(uid) {
 }
 
 const logoutHandler = () => {
-    const auth = getAuth();
     signOut(auth).then(() => {
         // Sign-out successful.
         console.log("signout successfully")

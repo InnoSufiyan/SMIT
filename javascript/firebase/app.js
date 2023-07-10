@@ -1,22 +1,5 @@
-
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js'
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-import {
-    getFirestore, collection, addDoc, setDoc, doc
-} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyDwBF3KuPeec5SLGlyOYyIrNwqpYkGe6fA",
-    authDomain: "jobs-45474.firebaseapp.com",
-    projectId: "jobs-45474",
-    storageBucket: "jobs-45474.appspot.com",
-    messagingSenderId: "167672939141",
-    appId: "1:167672939141:web:6128592b657f1994665fec"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+// import * as firebaseConfigFromOurFile from './firebaseConfig.js'
+import {auth, app, db, getFirestore, collection, addDoc, setDoc, doc, getAuth, createUserWithEmailAndPassword} from './firebaseConfig.js'
 
 const username = document.querySelector('#username')
 const firstName = document.querySelector('#firstName')
