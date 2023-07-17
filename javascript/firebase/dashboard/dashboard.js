@@ -16,6 +16,7 @@ const emailAddressHTML = document.getElementById('emailAddress')
 const mobNumHTML = document.getElementById('mobNum')
 const firstNameHTML = document.getElementById('firstName')
 const lastNameHTML = document.getElementById('lastName')
+const dashBoardpp = document.getElementById('dashBoardPp')
 const logoutBtn = document.getElementById('logoutBtn')
 const postBtn = document.getElementById('postBtn')
 const postInputBox = document.getElementById('postInputBox')
@@ -50,12 +51,14 @@ async function getUserData(uid) {
 
         if (docSnap.exists()) {
             // console.log("Document data:", docSnap.data());
-            const { userName, lastName, firstName, phNum, email } = docSnap.data()
+            const { userName, lastName, firstName, phNum, email, profilePicture } = docSnap.data()
+            console.log(profilePicture, "==>>profilePicture")
             userNameHTML.textContent = userName
             emailAddressHTML.textContent = email
             mobNumHTML.textContent = phNum
             firstNameHTML.textContent = firstName
             lastNameHTML.textContent = lastName
+            dashBoardpp.src = profilePicture
         } else {
             // docSnap.data() will be undefined in this case
             console.log("No such document!");
