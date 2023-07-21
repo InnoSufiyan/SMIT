@@ -8,7 +8,11 @@ import {
     setDoc,
     addDoc,
     collection,
-    getDocs
+    getDocs,
+    ref,
+    storage,
+    getDownloadURL,
+    uploadBytesResumable
 } from '../firebaseConfig.js'
 
 const userNameHTML = document.getElementById('userName')
@@ -21,6 +25,10 @@ const logoutBtn = document.getElementById('logoutBtn')
 const postBtn = document.getElementById('postBtn')
 const postInputBox = document.getElementById('postInputBox')
 const postArea = document.getElementById('postAreaId')
+const uploadImage = document.getElementById('uploadImageBtn')
+
+
+
 
 getPosts()
 
@@ -54,11 +62,11 @@ async function getUserData(uid) {
             const { userName, lastName, firstName, phNum, email, profilePicture } = docSnap.data()
             console.log(profilePicture, "==>>profilePicture")
             userNameHTML.textContent = userName
-            emailAddressHTML.textContent = email
+            emailAddressHTML.textContent = email || 'No email updated'
             mobNumHTML.textContent = phNum
             firstNameHTML.textContent = firstName
             lastNameHTML.textContent = lastName
-            dashBoardpp.src = profilePicture
+            dashBoardpp.src = profilePicture || '../assets/pp.jpg'
         } else {
             // docSnap.data() will be undefined in this case
             console.log("No such document!");
@@ -84,19 +92,114 @@ postBtn.addEventListener('click', postHandler)
 
 
 async function postHandler() {
+    const file = uploadImage.files[0]
+
+    // Create the file metadata
+    /** @type {any} */
+    const metadata = {
+        contentType: 'image/jpeg'
+    };
+
+    // Upload file and metadata to the object 'images/mountains.jpg'
+    const storageRef = ref(storage, 'images/' + file.name);
+    const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+
+
+    // Listen for state changes, errors, and completion of the upload.
+    uploadTask.on('state_changed',
+        (snapshot) => {
+            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log('Upload is ' + progress + '% done');
+            switch (snapshot.state) {
+                case 'paused':
+                    console.log('Upload is paused');
+                    break;
+                case 'running':
+                    console.log('Upload is running');
+                    break;
+            }
+        },
+        (error) => {
+            // A full list of error codes is available at
+            // https://firebase.google.com/docs/storage/web/handle-errors
+            switch (error.code) {
+                case 'storage/unauthorized':
+                    // User doesn't have permission to access the object
+                    break;
+                case 'storage/canceled':
+                    // User canceled the upload
+                    break;
+
+                // ...
+
+                case 'storage/unknown':
+                    // Unknown error occurred, inspect error.serverResponse
+                    break;
+            }
+        },
+        () => {
+            // Upload completed successfully, now we can get the download URL
+            getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+                console.log('File available at', downloadURL);
+
+                try {
+                    const response = await addDoc(collection(db, "posts"), {
+                        postContent: postInputBox.value,
+                        authorId: currentLoggedInUser,
+                        postImageUrl: downloadURL
+                    });
+
+                    // console.log(response.id)
+                    getPosts()
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+                }
+
+
+
+                // await setDoc(doc(db, "users", currentLoggedInUser), {
+                //     firstName: firstName.value,
+                //     lastName: lastName.value,
+                //     userName: userName.value,
+                //     phNum: mobileNumber.value,
+                //     profilePicture: downloadURL
+                // });
+            });
+        }
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // console.log(postInputBox.value)
     // console.log(currentLoggedInUser, "==>>currentLoggedInUser")
-    try {
-        const response = await addDoc(collection(db, "posts"), {
-            postContent: postInputBox.value,
-            authorId: currentLoggedInUser
-        });
+    // try {
+    //     const response = await addDoc(collection(db, "posts"), {
+    //         postContent: postInputBox.value,
+    //         authorId: currentLoggedInUser
+    //     });
 
-        // console.log(response.id)
-        getPosts()
-    } catch (e) {
-        console.error("Error adding document: ", e);
-    }
+    //     // console.log(response.id)
+    //     getPosts()
+    // } catch (e) {
+    //     console.error("Error adding document: ", e);
+    // }
 }
 
 async function getPosts() {
@@ -105,7 +208,7 @@ async function getPosts() {
     querySnapshot.forEach(async (doc) => {
         // doc.data() is never undefined for query doc snapshots
         // console.log(doc.id, " => ", doc.data());
-        const { authorId, postContent } = doc.data()
+        const { authorId, postContent, postImageUrl } = doc.data()
 
 
         const authorDetails = await getAuthorData(authorId)
@@ -116,10 +219,10 @@ async function getPosts() {
         const content = `
         <div class="upperPart">
         <div class="authorDetails d-flex ">
-        <img src="../assets/avatarDummy.png" alt="" class="profilePicture">
+        <img src=${authorDetails.profilePicture || '../assets/pp.jpg'} alt="" class="profilePicture">
         <div>
                                     <h4 style="font-size: 15px;">${authorDetails?.userName} </h4>
-                                    <h5 style="font-size: 12px;">${authorDetails?.email}</h5>
+                                    <h5 style="font-size: 12px;">${authorDetails?.email || 'No email updated'}</h5>
                                     <h6 style="font-size: 10px;">10h</h6>
                                 </div>
                             </div>
@@ -138,7 +241,7 @@ async function getPosts() {
                             <p>
                             ${postContent}
                             </p>
-                            <img src="../assets/dummyPostImage.jpg" alt="" class="img-fluid">
+                            <img src=${postImageUrl} alt="" class="img-fluid">
                         </div>
                         <div class="buttons">
                             <p>Like</p>
