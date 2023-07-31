@@ -1,8 +1,8 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js'
-import { getStorage, ref, uploadBytesResumable, getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import {
-    getFirestore, collection, addDoc, setDoc, doc, query, where, getDocs, getDoc, deleteDoc, updateDoc
+    getFirestore, collection, addDoc, setDoc, doc, query, where, orderBy, getDocs, getDoc, deleteDoc, updateDoc, serverTimestamp 
 } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -43,5 +43,7 @@ export {
     uploadBytesResumable,
     getDownloadURL,
     deleteDoc,
-    updateDoc
+    updateDoc,
+    orderBy,
+    serverTimestamp,
 };

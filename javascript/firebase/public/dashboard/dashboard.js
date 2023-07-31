@@ -14,11 +14,16 @@ import {
     getDownloadURL,
     uploadBytesResumable,
     deleteDoc,
-    updateDoc
+    updateDoc,
+    orderBy,
+    serverTimestamp,
+    query
 } from '../firebaseConfig.js'
 
 let editPostFlag = false
 let postIdGlobal;
+
+console.log(serverTimestamp, "==>>>serverTimestamp")
 
 const userNameHTML = document.getElementById('userName')
 const emailAddressHTML = document.getElementById('emailAddress')
@@ -33,8 +38,6 @@ const postArea = document.getElementById('postAreaId')
 const uploadImage = document.getElementById('uploadImageBtn')
 
 editPostFlag ? postBtn.innerText = "Update" : postBtn.innerText = "Post"
-
-
 
 
 getPosts()
@@ -105,6 +108,9 @@ async function postHandler() {
 
     console.log("post Handler working")
 
+    let currentTime = new Date()
+
+    console.log(currentTime);
 
 
 
@@ -160,11 +166,14 @@ async function postHandler() {
             getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
                 console.log('File available at', downloadURL);
 
+                console.log(currentTime.toLocaleString(), "==>> my local time")
+
                 try {
                     const response = await addDoc(collection(db, "posts"), {
                         postContent: postInputBox.value,
                         authorId: currentLoggedInUser,
-                        postImageUrl: downloadURL
+                        postImageUrl: downloadURL,
+                        time: serverTimestamp()
                     });
 
                     // console.log(response.id)
@@ -329,28 +338,37 @@ async function deletePostHandler(postId) {
 }
 
 async function getPosts() {
-    postArea.innerHTML = ''
-    const querySnapshot = await getDocs(collection(db, "posts"));
-    querySnapshot.forEach(async (doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        // console.log(doc.id, " => ", doc.data());
-        let postId = doc.id
-        const { authorId, postContent, postImageUrl } = doc.data()
+    try {
+        postArea.innerHTML = ''
+        // const querySnapshot = await query(getDocs(collection(db, "posts"), orderBy("time", "desc")));
+        // const querySnapshot = await query("posts", orderBy("time"));
+        const postsCollectionRef = collection(db, "posts");
+
+        // Create a query to order the documents by "time" field in descending order
+        const sortedQuery = query(postsCollectionRef, orderBy("time", "asc")); // "desc"
+
+        // Fetch the documents based on the sorted query
+        const querySnapshot = await getDocs(sortedQuery);
+        querySnapshot.forEach(async (doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            // console.log(doc.id, " => ", doc.data());
+            let postId = doc.id
+            const { authorId, postContent, postImageUrl, time } = doc.data()
 
 
-        const authorDetails = await getAuthorData(authorId)
+            const authorDetails = await getAuthorData(authorId)
 
 
-        const postElement = document.createElement('div')
-        postElement.setAttribute('class', 'post my-5 bg-light rounded')
-        const content = `
+            const postElement = document.createElement('div')
+            postElement.setAttribute('class', 'post my-5 bg-light rounded')
+            const content = `
         <div class="upperPart">
         <div class="authorDetails d-flex ">
         <img src=${authorDetails.profilePicture || '../assets/pp.jpg'} alt="" class="profilePicture">
         <div>
                                     <h4 style="font-size: 15px;">${authorDetails?.userName} </h4>
                                     <h5 style="font-size: 12px;">${authorDetails?.email || 'No email updated'}</h5>
-                                    <h6 style="font-size: 10px;">10h</h6>
+                                    <h6 style="font-size: 10px;">${new Date(time.seconds * 1000)}</h6>
                                 </div>
                             </div>
                             ${authorId === currentLoggedInUser ? `
@@ -365,7 +383,7 @@ async function getPosts() {
                                 </ul>
                             </div>
                                 ` : ''
-            }
+                }
                             
                         </div>
                         <div class="postData">
@@ -385,11 +403,14 @@ async function getPosts() {
                             <button onclick="commentHandler()">Comment</button>
                         </div>
     `
-        postElement.innerHTML = content
-        // console.log(postElement)
-        postArea.appendChild(postElement)
+            postElement.innerHTML = content
+            // console.log(postElement)
+            postArea.appendChild(postElement)
 
-    });
+        });
+    } catch (error) {
+        console.log(error, "==>>error in get Posts")
+    }
 }
 
 async function getAuthorData(authorUid) {
