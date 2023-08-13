@@ -5,9 +5,6 @@ const port = 8000;
 
 const server = http.createServer((req, res)=> {
 
-
-
-
     console.log(req.url, "==>> request url")
     if(req.url === "/") {
         res.end('this is my home page')

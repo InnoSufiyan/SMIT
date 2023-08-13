@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "destinationName": "islamabad",
+            "country": "Pakistan",
+            "tourCapacity": 12,
+            "departure": "8/8/2023",
+            "arrival": "20/8/2023",
+            "price": "50000",
+            "transport": "Air"
+        },
+        {
+            "id": 2,
+            "destinationName": "muree",
+            "country": "Pakistan",
+            "tourCapacity": 12,
+            "departure": "12/8/2023",
+            "arrival": "25/8/2023",
+            "price": "50000",
+            "transport": "Air"
+        },
+        {
+            "id": 3,
+            "destinationName": "srinagar",
+            "country": "Pakistan",
+            "tourCapacity": 12,
+            "departure": "6/8/2023",
+            "arrival": "18/8/2023",
+            "price": "50000",
+            "transport": "Air"
+        },
+        {
+            "id": 4,
+            "destinationName": "Dubai",
+            "country": "UAE",
+            "tourCapacity": 25,
+            "departure": "12/8/2023",
+            "arrival": "20/8/2023",
+            "price": "150000",
+            "transport": "Air"
+        }
+    ]
+}
