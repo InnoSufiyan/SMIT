@@ -2,7 +2,10 @@ export const getProfile = (req, res) => {
     console.log(req.params)
     res.status(200).send({
         status: "Success",
-        data: [],
+        data: {
+            name: "sufiyan",
+            age: 32
+        },
         message: "Yeh log user ka data"
     })
 }
