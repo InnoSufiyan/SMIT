@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "first_name": "Chuck",
+        "last_name": "Esselen",
+        "email": "cesselen0@mtv.com",
+        "gender": "Male",
+        "ip_address": "183.15.60.169"
+    },
+    {
+        "id": 2,
+        "first_name": "Rufus",
+        "last_name": "Shear",
+        "email": "rshear1@moonfruit.com",
+        "gender": "Male",
+        "ip_address": "15.178.103.136"
+    },
+    {
+        "id": 3,
+        "first_name": "Wilek",
+        "last_name": "Lightwing",
+        "email": "wlightwing2@techcrunch.com",
+        "gender": "Genderfluid",
+        "ip_address": "60.51.27.59"
+    },
+    {
+        "id": 4,
+        "first_name": "Carmelina",
+        "last_name": "Mounter",
+        "email": "cmounter3@myspace.com",
+        "gender": "Female",
+        "ip_address": "61.195.163.236"
+    },
+    {
+        "id": 5,
+        "first_name": "Helsa",
+        "last_name": "Rous",
+        "email": "hrous4@feedburner.com",
+        "gender": "Female",
+        "ip_address": "157.230.115.150"
+    },
+    {
+        "id": 6,
+        "first_name": "Benny",
+        "last_name": "Yegorshin",
+        "email": "byegorshin5@cbc.ca",
+        "gender": "Male",
+        "ip_address": "131.140.6.86"
+    },
+    {
+        "id": 7,
+        "first_name": "Krispin",
+        "last_name": "Braitling",
+        "email": "kbraitling6@vinaora.com",
+        "gender": "Polygender",
+        "ip_address": "47.94.106.16"
+    },
+    {
+        "id": 8,
+        "first_name": "Seth",
+        "last_name": "Woolvett",
+        "email": "swoolvett7@wiley.com",
+        "gender": "Male",
+        "ip_address": "145.191.51.151"
+    },
+    {
+        "id": 9,
+        "first_name": "Jillian",
+        "last_name": "Styant",
+        "email": "jstyant8@slate.com",
+        "gender": "Female",
+        "ip_address": "184.76.76.188"
+    },
+    {
+        "id": 10,
+        "first_name": "Rhett",
+        "last_name": "Vittle",
+        "email": "rvittle9@nsw.gov.au",
+        "gender": "Male",
+        "ip_address": "89.39.187.155"
+    }
+]

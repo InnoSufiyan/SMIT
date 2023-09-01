@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import authRoutes from './routes/authRoutes.js'
 import profileRoutes from './routes/profileRoutes.js'
 import userRoutes from './routes/userRoutes.js';
+import postsRoutes from './routes/postRoutes.js';
 
 const app = express()
 
@@ -34,6 +35,7 @@ app.use((req, res, next) => {
 app.use('/auth', authRoutes)
 app.use('/profile', profileRoutes)
 app.use('/users', userRoutes)
+app.use('/posts', postsRoutes)
 
 app.use((req, res, next) => {
     res.send("ghalat jagah aagaey ho, aesa koi route hi nahin hai")
