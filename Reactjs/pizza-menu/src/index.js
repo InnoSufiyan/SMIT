@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import SelectionApp from './SelectionApp';
+import EatNSplit from './EatNSplit';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <SelectionApp />
+    {/* <SelectionApp /> */}
+    <EatNSplit />
     
   </React.StrictMode>
 );
