@@ -70,7 +70,7 @@ export default function EatNSplit() {
                                                 Menay {frnd.name} sey {frnd.money} lenay hain
                                             </p> : frnd.money < 0 ? <p>
                                                 Menay {frnd.name} ko {Math.abs(frnd.money)} denay hain
-                                            </p> :  <p>
+                                            </p> : <p>
                                                 Hum sath sath hain
                                             </p>
                                         }
@@ -104,6 +104,20 @@ export default function EatNSplit() {
                 {
                     splitState && <EatSplitArea frnd={user} />
                 }
+                {/* <Check1 component={<GenericAlert text="error" />}  />
+                <Check1 component={<GenericAlert text="success" />} />
+                <Check1 component={<GenericAlert text="fail" />} /> */}
+
+                <Check1>
+                    <h1>dasdasd</h1>
+                    <GenericAlert text="success" /></Check1>
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" width="200" />
+                <Check1>
+                    <GenericAlert text="fail" />
+                </Check1>
+                <Check1>
+                    <GenericAlert text="error" />
+                </Check1>
             </div>
 
         </>
@@ -113,6 +127,10 @@ export default function EatNSplit() {
 
 
 function AddFriendBox({ setAddFriendBox, addFriendHandler }) {
+
+
+
+
     console.log(setAddFriendBox, "==>>setAddFriendBox")
     const [name, setName] = useState("")
     const [imgUrl, setImageUrl] = useState("")
@@ -146,6 +164,20 @@ function EatSplitArea({ frnd }) {
             </select>
             <button>Add Bill</button>
         </div>
+    )
+}
+
+function Check1({ children }) {
+    return (
+        <>
+            {children}
+        </>
+    )
+}
+
+function GenericAlert({ text }) {
+    return (
+        <h1>{text}</h1>
     )
 }
 
