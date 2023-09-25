@@ -58,8 +58,8 @@ export default function EatNSplit() {
 
                     <div style={{ width: "50%" }}>
                         {
-                            frndsList?.map((frnd) => (
-                                <div style={{ border: 'black 2px solid', borderRadius: "20px", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            frndsList?.map((frnd, i) => (
+                                <div key={i} style={{ border: 'black 2px solid', borderRadius: "20px", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <div style={{ height: '70px', width: '70px', borderRadius: "50%", overflow: 'hidden' }}>
                                         <img src={frnd.url} alt="image of user" style={{ width: "100%", height: '100%', }} />
                                     </div>
