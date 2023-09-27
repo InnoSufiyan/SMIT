@@ -1,28 +1,38 @@
 import { useEffect, useState } from "react"
 
+
 export default function StateCheck() {
     const [menus, setMenus] = useState(0)
     const [inputText, setInputText] = useState("")
     const [isLoading, setIsLoading] = useState(false)
 
+    const controller = new AbortController()
+
     const apiCall = async (inputText) => {
         setIsLoading(true)
         const response = await fetch(
-            `https://forkify-api.herokuapp.com/api/v2/recipes?search=${inputText}`
+            `https://forkify-api.herokuapp.com/api/v2/recipes?search=${inputText}`,
+            {signal: controller.signal}
         );
 
         const res = await response.json()
-        console.log(res, "==>>res")
+        // console.log(res, "==>>res")
         setMenus(res)
         setIsLoading(false)
     }
 
     useEffect(() => {
-        apiCall(inputText)
+       inputText && apiCall(inputText)
+       console.log("chal jaa new api")
+
+       return function() {
+        console.log("ruk jaa purani api")
+        controller.abort()
+       }
     }, [inputText])
 
 
-    console.log("baahir wala console")
+    // console.log("baahir wala console")
 
 
     return (

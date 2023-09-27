@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import SelectionApp from './SelectionApp';
 import EatNSplit from './EatNSplit';
 import StateCheck from './StateCheck';
-// import KeyComponent from './KeyComponent';
+import CleanUp from './CleanUp.js';
+import KeyComponent from './KeyComponent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
     {/* <EatNSplit /> */}
     {/* <KeyComponent /> */}
     <StateCheck />
+    {/* <CleanUp /> */}
     
   </>
 );
