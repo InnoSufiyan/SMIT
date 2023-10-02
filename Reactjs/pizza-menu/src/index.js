@@ -3,22 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import SelectionApp from './SelectionApp';
-import EatNSplit from './EatNSplit';
-import StateCheck from './StateCheck';
-import CleanUp from './CleanUp.js';
-import KeyComponent from './KeyComponent';
+import { BrowserRouter } from 'react-router-dom';
+// import SelectionApp from './SelectionApp';
+// import EatNSplit from './EatNSplit';
+// import StateCheck from './StateCheck';
+// import CleanUp from './CleanUp.js';
+// import KeyComponent from './KeyComponent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    {/* <App /> */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
     {/* <SelectionApp /> */}
     {/* <EatNSplit /> */}
     {/* <KeyComponent /> */}
-    <StateCheck />
+    {/* <StateCheck /> */}
     {/* <CleanUp /> */}
-    
+
   </>
 );
 
