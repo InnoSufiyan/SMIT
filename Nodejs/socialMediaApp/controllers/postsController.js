@@ -1,67 +1,89 @@
-import Post from '../models/postSchema.js'
+import Post from '../models/postSchema.js';
 
 //GET
 // localhost:port/posts/
 
 export const getPosts = async (req, res) => {
+  console.log(req.query, '==>req query');
 
+  // const myObj = {
+  //     content: req.query.content,
+  //     authorId: req.query.authorId,
+  //     likeCount: req.query.likeCount
+  // }
 
+  const queryObj = { ...req.query };
+  console.log(queryObj, '===>>before sideLine');
 
-    console.log(req.query, "==>req query")
+  const sideLine = ['page', 'limit', 'sort', 'fields'];
+  //page
+  //limit
+  //sort
+  sideLine.forEach((el) => delete queryObj[el]);
 
-    const queryObj = { ...req.query }
-    console.log(queryObj, "===>>before sideLine")
+  console.log(queryObj, '===>>after sideLine');
 
-    const sideLine = ["page", "limit", "sort"]
+  let queryStg = JSON.stringify(queryObj);
 
-    sideLine.forEach(el => delete queryObj[el])
+  queryStg = queryStg.replace(/\b(gte|gt|lt|lte)\b/g, (match) => '$' + match);
+  // let query = queryStg.replace(/\b(gte|gt|lt|lte)\b/g, match => `$${match}`)
 
-    console.log(queryObj, "===>>after sideLine")
+  let query = JSON.parse(queryStg);
 
-    // let queryStg = JSON.stringify(queryObj)
+  let findQuery = Post.find(query);
 
-    // // queryStg = queryStg.replace(/\b(gte|gt|lt|lte)\b/g, match => "$" + match)
-    // let query = queryStg.replace(/\b(gte|gt|lt|lte)\b/g, match => `$${match}`)
+  let sortQuery = findQuery.sort(req.query.sort);
 
-    // query = JSON.parse(query)
+  if (req.query.fields) {
+    const myFields = req.query.fields.split(',').join(' ');
 
-    let query = Post.find(queryObj)
+    console.log(myFields, '==>>myFields');
 
-    query = query.sort(req.query.sort)
+    sortQuery = sortQuery.select(myFields);
+  }
 
-    console.log(query, "===>>> query")
-    
-                // authorId= 64e8328ed2d12db246fa23bf
-    const posts = await query
+  const pageLimit = sortQuery
+    .limit(req.query.limit)   
+    .skip((req.query.page - 1) * req.query.limit);
 
-    console.log(posts, "===>> posts")
+  //   let selectedQuery = sortQuery.select('authorId content');
 
-    res.status(200).send({
-        status: "Success",
-        message: "Get All Posts",
-        data: posts  //pending
-    })
-}
+  //   console.log(query, '===>>> query');
+
+  // authorId= 64e8328ed2d12db246fa23bf
+  const posts = await pageLimit;
+
+  //   console.log(posts, '===>> posts');
+
+  res.status(200).send({
+    status: 'Success',
+    message: 'Get All Posts',
+    data: posts, //pending
+  });
+};
 
 //GET
 // localhost:port/post/:id
 
-export const getPost = (req, res) => {
-    console.log(req.params.id)
-}
+export const getPost = async (req, res) => {
+  console.log(req.params.id);
+  const post = await Post.findById(req.params.id);
 
+  res.status(200).send({
+    status: 'Success',
+    message: 'Data Get Successfully',
+    data: post,
+  });
+};
 
 //POST
 // localhost:port/posts/
 
 export const addPost = async (req, res) => {
-
-    const newPost = await Post.create(req.body)
-    res.status(200).send({
-        status: "Success",
-        message: "Post Added Successfully",
-        data: newPost
-    })
-}
-
-
+  const newPost = await Post.create(req.body);
+  res.status(200).send({
+    status: 'Success',
+    message: 'Post Added Successfully',
+    data: newPost,
+  });
+};
